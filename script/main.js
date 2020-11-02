@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('NAME_PARAM').value = getParameterByName('name');
+  document.getElementById('SOURCE_PARAM').value = getParameterByName('nguon');
 
   Validator({
     form: '#form-1',
@@ -13,8 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
     ],
     onSubmit: async function (data) {
       // Call API
-      const body = JSON.stringify(data);
-
       await postForm(body)
         .then(res => {
           // link cần huyển tới
@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-const postForm = body => {
+const postForm = data => {
+  const body = JSON.stringify(data);
   return fetch('http://api.baoninh.xyz:8080/datasnap/rest/TServerMethodsAPI/Ladipage', {
     // return fetch('http:localhost:8080/datasnap/rest/TServerMethodsAPI/Ladipage', {
     method: 'POST',
@@ -38,19 +39,9 @@ const postForm = body => {
       user: "ninh",
       token: "baoanh21"
     },
-    body
+    body,
   });
 };
-
-// const handleSubmit = async (e) => {
-//   e.preventDefault();
-//   const body = JSON.stringify(Object.fromEntries(new FormData(e.target)));
-//   console.log("body: ", body)
-//   const res = await postForm(body);
-//   const data = await res.json();
-
-//   console.log(data);
-// };
 
 const getParameterByName = (name, url = window.location.href) => {
   name = name.replace(/[\[\]]/g, '\\$&');
@@ -210,8 +201,6 @@ function Validator(options) {
   }
 
 }
-
-
 
 // Định nghĩa rules
 // Nguyên tắc của các rules:
