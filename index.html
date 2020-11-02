@@ -28,7 +28,7 @@
 
       <div class="form-group">
         <label for="phone" class="form-label">Số điện thoại:</label>
-        <input id="phone" name="PHONE" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" maxlength="10" placeholder="VD: 0700000000" class="form-control">
+        <input id="phone" name="PHONE" type="tel" min="0" max="10" placeholder="VD: 0700000000" class="form-control" onkeyup="digits(this)">
         <span class="form-message"></span>
       </div>
 

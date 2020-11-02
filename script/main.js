@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+
   Validator({
     form: '#form-1',
     formGroupSelector: '.form-group',
@@ -12,7 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
     ],
     onSubmit: async function (data) {
       // Call API
-      await postForm(data)
+      const body = JSON.stringify(data);
+
+      await postForm(body)
         .then(res => {
           // link cần huyển tới
           const link_redirect =
@@ -27,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 const postForm = body => {
-  return fetch('http://localhost:8080/datasnap/rest/TServerMethodsAPI/Ladipage', {
+  return fetch('http://api.baoninh.xyz:8080/datasnap/rest/TServerMethodsAPI/Ladipage', {
     // return fetch('http:localhost:8080/datasnap/rest/TServerMethodsAPI/Ladipage', {
     method: 'POST',
     headers: {
@@ -250,3 +253,7 @@ Validator.isConfirmed = function (selector, getConfirmValue, message) {
     }
   }
 }
+
+var digits = function(box) {
+  box.value = box.value.replace(/[^0-9]/g, '');
+};
