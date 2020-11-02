@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact form</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./script/main.js"></script>
+</head>
+<body>
+  <div class="main">
+    <form method="POST" class="form" id="form-1">
+      <h3 class="heading">Đăng ký khoá học Excel</h3>
+      <div class="spacer"></div>
+
+      <div class="form-group">
+        <label for="name" class="form-label">Họ và tên:</label>
+        <input id="name" name="NAME" type="text" placeholder="VD: Sơn Đặng" class="form-control">
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Email:</label>
+        <input id="email" name="EMAIL" type="text" placeholder="VD: email@domain.com" class="form-control">
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="phone" class="form-label">Số điện thoại:</label>
+        <input id="phone" name="PHONE" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" maxlength="10" placeholder="VD: 0700000000" class="form-control">
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="cty" class="form-label">Công ty:</label>
+        <input id="cty" name="CTY" type="text" placeholder="Nhập tên công ty" class="form-control">
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="job" class="form-label">Nghề nghiệp:</label>
+        <input id="job" name="NGHE_NGHIEP" type="text" placeholder="Nhập nghề nghiệp" class="form-control">
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Sản phẩm:</label>
+        <input type="hidden" id="MA_SP" name="MA_SP" value="ATOOLS">
+        <select id="TEN_SP" name="TEN_SP" class="form-control">
+          <option value="Phần mềm Add-In A-Tools Excel">Phần mềm Add-In A-Tools Excel</option>
+        </select>
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Hình thức học:</label>
+        <input type="hidden" id="MA_SP" name="MA_SP" value="ATOOLS">
+        <select id="LYDO_DK" name="LYDO_DK" class="form-control">
+          <option value="" selected disabled hidden>Tính năng cần sử dụng:</option>
+          <option type="text" value="1.Chia sẻ Excel Qua Mạng">1. Chia sẻ Excel Qua Mạng.</option>
+          <option type="text" value="2.Tạo báo cáo động Excel">2. Tạo báo cáo động Excel.</option>
+          <option type="text" value="3.Nhập Liệu Nâng Cao">3. Tạo nhập tìm kiếm, tra cứu trên Excel</option>
+          <option type="text" value="4.Thiết kế Excel">4. Thiết kế file sử dụng A-Tools</option>
+          <option type="text" value="5.Tính năng phụ">5. Tính năng phụ đọc số thành chữ, chuyển Font,...</option>
+        </select>
+        <span class="form-message"></span>
+      </div>
+
+      <input type="hidden" id="IP" name="IP">
+      <input type="hidden" id="LOCATION" name="LOCATION">
+      <input type="hidden" id="DEVICE" name="DEVICE">
+      <!-- Get Param -->
+      <input type="hidden" id="NAME_PARAM" name="NAME_PARAM">
+      <input type="hidden" id="SOURCE_PARAM" name="SOURCE_PARAM">
+
+      <button class="form-submit">Đăng ký</button>
+    </form>
+  </div>
+</body>
+</html>
