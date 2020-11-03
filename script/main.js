@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ],
     onSubmit: async function (data) {
       // Call API
-      await postForm(body)
+      await postForm(data)
         .then(res => {
           // link cần huyển tới
           const link_redirect =
