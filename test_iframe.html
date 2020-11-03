@@ -11,8 +11,11 @@
   <script>
     const getAllParams = window.location.href.split('?')[1];
     const urlaf = 'http://hocexcelnangcao.net/Resources/2.%20FORM/FormRest/1.EXNC.html';
+    const iframeAF = document.getElementById("iframeAF");
 
-    document.getElementById("iframeAF").src = `${urlaf}?` + getAllParams;
+    if (iframeAF) {
+      document.getElementById("iframeAF").src = `${urlaf}?` + getAllParams;
+    }
   </script>
 </body>
 </html>
