@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <iframe id="iframeAF" src="" width="320" height="520"></iframe>
+
+  <script>
+    const getAllParams = window.location.href.split('?')[1];
+    const urlaf = 'http://hocexcelnangcao.net/Resources/2.%20FORM/FormRest/1.EXNC.html';
+
+    document.getElementById("iframeAF").src = `${urlaf}?` + getAllParams;
+  </script>
+</body>
+</html>
