@@ -64,6 +64,11 @@
       <input type="hidden" id="LOCATION" name="LOCATION">
       <input type="hidden" id="DEVICE" name="DEVICE">
 
+      <input type="text" id="TEN_SP">
+      <input type="text" id="MA_SP">
+      <input type="text" id="NAMEF">
+      <input type="text" id="NGUON">
+
       <button class="form-submit">Đăng ký</button>
     </form>
   </div>
@@ -196,6 +201,11 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('TEN_SP').value = getParameterByName('TEN_SP');
+    document.getElementById('MA_SP').value = getParameterByName('MA_SP');
+    document.getElementById('NAMEF').value = getParameterByName('NAMEF');
+    document.getElementById('NGUON').value = getParameterByName('NGUON');
+    
 
     Validator({
       form: '#form-1',
@@ -254,6 +264,7 @@
   };
 
   const getParameterByName = (name, url = window.location.href) => {
+    console.log('name', name);
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
       results = regex.exec(url);
