@@ -64,10 +64,10 @@
       <input type="hidden" id="LOCATION" name="LOCATION">
       <input type="hidden" id="DEVICE" name="DEVICE">
 
-      <input type="text" id="TEN_SP">
-      <input type="text" id="MA_SP">
-      <input type="text" id="NAMEF">
-      <input type="text" id="NGUON">
+      <input type="hidden" id="MA_SP">
+      <input type="hidden" id="TEN_SP">
+      <input type="hidden" id="NAMEAF">
+      <input type="hidden" id="NGUON">
 
       <button class="form-submit">Đăng ký</button>
     </form>
@@ -83,13 +83,13 @@
   }
 
   html {
-    color: #333;
+    color: #11a091;
     font-size: 62.5%;
     font-family: 'Open Sans', sans-serif;
   }
 
   .main {
-    background: #f1f1f1;
+    background: #ffffff;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -135,7 +135,7 @@
   .form-label {
     font-weight: 700;
     padding-bottom: 6px;
-    line-height: 1.8rem;
+    line-height: 0.5rem;
     font-size: 1.4rem;
   }
 
@@ -169,13 +169,13 @@
   .form-submit {
     outline: none;
     background-color: #1dbfaf;
-    margin-top: 12px;
+    margin-top: 2px;
     padding: 12px 16px;
     font-weight: 600;
     color: #fff;
     border: none;
     width: 100%;
-    font-size: 14px;
+    font-size: 18px;
     border-radius: 8px;
     cursor: pointer;
   }
@@ -185,7 +185,7 @@
   }
 
   .spacer {
-    margin-top: 36px;
+    margin-top: 16px;
   }
 
   /* select, textarea {
@@ -203,7 +203,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('TEN_SP').value = getParameterByName('TEN_SP');
     document.getElementById('MA_SP').value = getParameterByName('MA_SP');
-    document.getElementById('NAMEF').value = getParameterByName('NAMEF');
+    document.getElementById('NAMEAF').value = getParameterByName('NAMEAF');
     document.getElementById('NGUON').value = getParameterByName('NGUON');
     
 
