@@ -6,15 +6,15 @@
   <title>Document</title>
 </head>
 <body>
-  <iframe id="iframeAF" src="" width="320" height="520"></iframe>
+  <!-- <iframe id="iframeAF" data-src="http://hocexcelnangcao.net/Resources/2.%20FORM/FormRest/1.EXNC.html?masp=masanpham&tensp=tensanpham" src="" width="320" height="520"></iframe> -->
+  <iframe id="iframeAF" data-src="http://127.0.0.1:5500/FormDangKyCssJs.html?masp=masanpham&tensp=tensanpham" src="" width="420" height="520"></iframe>
 
   <script>
     const getAllParams = window.location.href.split('?')[1];
-    const urlaf = 'http://hocexcelnangcao.net/Resources/2.%20FORM/FormRest/1.EXNC.html';
-    const iframeAF = document.getElementById("iframeAF");
+    const iframeAF = document.querySelector('#iframeAF');
 
     if (iframeAF) {
-      iframeAF.src = `${urlaf}?` + getAllParams;
+      iframeAF.src = `${iframeAF.dataset.src}&` + getAllParams;
     }
   </script>
 </body>
